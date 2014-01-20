@@ -12,6 +12,7 @@
 
 #include "Entity.h"
 #include "Map.h"
+#include "CollisionBlock.h"
 
 int main()
 {
@@ -30,8 +31,22 @@ int main()
 	C_Map mapa;
 	mapa.loadTextures();
 	mapa.loadMapFile();
-	
 
+	std::vector<C_CollisionBlock*> cb;
+
+	C_CollisionBlock *colblock;
+
+	for (int i = 0; i < 15; i++)
+		for (int j = 0; j < 20; j++)
+		{
+			{
+				colblock = new C_CollisionBlock(sf::Vector2f(32, 32), sf::Vector2f(32 * j, 32 * i));
+				cb.push_back(colblock);
+
+				//cb.push_back(&C_CollisionBlock(sf::Vector2f(32, 32), sf::Vector2f(32 * j - 32, 32 * i - 32)));
+			}
+		}
+	
 
 	//sf::Clock clock;
 	//double FPS_counter;
@@ -56,6 +71,12 @@ int main()
 		gracz.updatePos();
 		gracz.mouseClick();
 		gracz.render(&window);
+
+		for (int i = 0; i < 300; i++)
+		{
+			cb[i] ->render(&window);
+		}
+
 		window.display();
 		//hehe
 	}
