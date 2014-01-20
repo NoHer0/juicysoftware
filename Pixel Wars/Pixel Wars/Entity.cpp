@@ -23,7 +23,7 @@ C_Entity::C_Entity(sf::Vector2f size, sf::Vector2f pos)
 	m_entity.setTexture(&m_entityTexture_front);
 }
 
-void C_entity::updatePos()
+void C_Entity::updatePos()
 {
 
 	time = m_timer.restart().asSeconds();
@@ -95,12 +95,12 @@ void C_entity::updatePos()
 	if (m_factor != 0) m_factor = 0;
 }
 
-void C_entity::mouseClick()
+void C_Entity::mouseClick()
 {
 	//if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) std::cout << sf::Mouse::getPosition().x;
 }
 
-void C_entity::checkCollision()
+void C_Entity::checkCollision()
 {
 	
 }

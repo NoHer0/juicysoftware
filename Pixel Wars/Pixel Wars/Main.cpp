@@ -57,6 +57,7 @@ int main()
 		gracz.mouseClick();
 		gracz.render(&window);
 		window.display();
+		//hehe
 	}
 	return 0;
 }
