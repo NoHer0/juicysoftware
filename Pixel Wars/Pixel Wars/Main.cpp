@@ -11,6 +11,7 @@
 
 
 #include "Entity.h"
+#include "Player.h"
 #include "Map.h"
 #include "CollisionBlock.h"
 
@@ -26,7 +27,7 @@ int main()
 	window.setVerticalSyncEnabled(true);
 
 	// nowy gracz na tibijskiej arenie
-	C_Entity gracz(sf::Vector2f(42, 42), sf::Vector2f(0, 0));
+	C_Entity* gracz = new C_Player(sf::Vector2f(42, 42), sf::Vector2f(0, 0));
 
 	C_Map mapa;
 	mapa.loadTextures();
@@ -67,10 +68,8 @@ int main()
 		window.clear();
 
 		mapa.renderMap(&window);
-		gracz.checkCollision();
-		gracz.updatePos();
-		gracz.mouseClick();
-		gracz.render(&window);
+		gracz->update();
+		gracz->render(&window);
 
 		for (int i = 0; i < 300; i++)
 		{
@@ -78,7 +77,7 @@ int main()
 		}
 
 		window.display();
-		//hehe
+		//hehe XD JAKIE TO SMIESZNE 
 	}
 	return 0;
 }
