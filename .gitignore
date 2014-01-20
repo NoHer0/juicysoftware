@@ -5,3 +5,5 @@
 /Pixel Wars/Debug
 /Pixel Wars/Pixel Wars/Pixel Wars
 /Pixel Wars/Pixel Wars/Release Static
+*.sdf
+*.suo
